@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/icon.png">
+    <title>登录</title>
+    <!-- Bootstrap 核心 CSS -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+	<script src="../jquery/jquery-3.1.1.js"></script>
+	<!-- 包括所有已编译的插件 -->
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src="js/Pagination.js"></script>
+    <style>
+    	.page-bar{
+    	}
+    	.page-bar a{
+    		float:left;
+    		margin:0px 5px;
+    	}
+    	.page-num{
+    		float:left;	
+    	}
+
+		.page-num .curr-page{
+			border:none;
+		}
+    	.page-num .pn-break{
+    		float:left;
+    	}
+    	.p-skin{
+    		float:left;
+    	}
+    	
+    	.clear-fix{
+    		clear:both;
+    	}
+    	
+    </style>
+    <script>
+    	$(function(){
+    		var p=new Pagination({
+    			containerId:'pageBar',
+    			page:30,
+    			rows:10,
+    			count:1000,
+    			toPage:function(page){
+    				alert("第"+page+"页！");
+    			}
+    		});
+    	});
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+    	<div class="col-md-12">
+    		<!-- 
+    		<div class="page-bar" >
+	            <div class="page-num">
+	                <a class="disabled btn btn-default">上一页</a>
+	                <a href="#" class="curr-page btn btn-default">1</a>
+	                <a href="#" class=" btn btn-default">2</a>
+	                <a href="#" class=" btn btn-default">3</a>
+	                <div class="pn-break">…</div>
+	                <a href="#" class="btn btn-default" >91</a>
+	                <a class="pn-next btn btn-default" href="#">下一页</a>
+	            </div>
+	            <div class="p-skip">
+	                <div style="float:left;margin-top:6px;">共91页&nbsp;&nbsp;到第</div> 
+	                <input class="form-control" style="width:40px;display:block;float:left;margin:0px 2px;" type="text" maxlength="4" value="1" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" onkeydown="javascript:if(event.keyCode==13){page_jump();return false;}">
+	                <div style="float:left;margin-top:6px;">页</div>
+	                <a class="btn btn-default" href="javascript:page_jump();">确定</a>
+	            </div>
+	            
+	            <div class="clearfix"></div>
+				 -->
+				 <div id="pageBar">
+				 
+				 </div>
+				
+        	</div>
+    	</div>
+    </div>
+</div> <!-- /container -->
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.page-bar {
+    margin: 10px 0px;
+}
+
+.page-bar a {
+    float: left;
+    margin: 0px 5px;
+}
+
+.page-num {
+    float: left;
+}
+
+.page-num .curr-page {
+    background-color: #248be0;
+    color: white;
+}
+
+.page-num .pn-break {
+    float: left;
+}
+
+.p-skin {
+    float: left;
+}
+
+.clear-fix {
+    clear: both;
+}
