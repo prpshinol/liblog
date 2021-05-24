@@ -15,14 +15,14 @@ import javax.persistence.Table;
  * Follow entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "follow")
+@Table(name = "follow", catalog = "liblog")
 public class Follow implements java.io.Serializable {
 
 	// Fields
 
 	private FollowId id;
-	private User userByFansId;
-	private User userByUserId;
+	private User fans;
+	private User user;
 	private Timestamp createTime;
 
 	// Constructors
@@ -32,18 +32,18 @@ public class Follow implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Follow(FollowId id, User userByFansId, User userByUserId) {
+	public Follow(FollowId id, User fans, User user) {
 		this.id = id;
-		this.userByFansId = userByFansId;
-		this.userByUserId = userByUserId;
+		this.fans = fans;
+		this.user = user;
 	}
 
 	/** full constructor */
-	public Follow(FollowId id, User userByFansId, User userByUserId,
-			Timestamp createTime) {
+	public Follow(FollowId id, User fans, User user,
+				  Timestamp createTime) {
 		this.id = id;
-		this.userByFansId = userByFansId;
-		this.userByUserId = userByUserId;
+		this.fans = fans;
+		this.user = user;
 		this.createTime = createTime;
 	}
 
@@ -62,22 +62,22 @@ public class Follow implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "fans_id", nullable = false, insertable = false, updatable = false)
-	public User getUserByFansId() {
-		return this.userByFansId;
+	public User getFans() {
+		return this.fans;
 	}
 
-	public void setUserByFansId(User userByFansId) {
-		this.userByFansId = userByFansId;
+	public void setFans(User userByFansId) {
+		this.fans = userByFansId;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
-	public User getUserByUserId() {
-		return this.userByUserId;
+	public User getUser() {
+		return this.user;
 	}
 
-	public void setUserByUserId(User userByUserId) {
-		this.userByUserId = userByUserId;
+	public void setUser(User userByUserId) {
+		this.user = userByUserId;
 	}
 
 	@Column(name = "create_time", length = 19)

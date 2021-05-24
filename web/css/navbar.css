@@ -1,0 +1,27 @@
+#nav-brand {
+    font-variant: small-caps;
+    font-weight: bolder;
+    color: #357ebd;
+    -webkit-text-stroke: 1px #ffffff;
+    font-size: 35px;
+}
+
+#nav-brand:hover {
+    text-shadow: 0px 0px 4px #ffffff;
+}
+#img-brand {
+    width: 40px;
+    display: block;
+    float: left;
+    margin-top: -10px;
+    margin-right: 5px;
+}
+
+nav .img-thumbnail {
+    padding: 2px;
+    width: 36px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: 5px;
+}
+

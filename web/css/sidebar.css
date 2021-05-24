@@ -1,0 +1,131 @@
+.blog-sidebar {
+    padding-left: 0;
+    padding-right: 0;
+    width: 300px;
+}
+
+.profile_card {
+    box-shadow: 0px 0px 10px #e1e1e1;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+    margin-bottom: 15px;
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+.my_profile_container {
+	position:relative;
+    height: 193px;
+}
+
+.profile_avatar_container {
+    overflow: hidden;
+    margin: auto;
+    padding: 12px 10px 10px 10px;
+    display: inline-block;
+}
+
+.profile_avatar {
+    width: 70px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: white;
+}
+
+.profile_avatar:hover {
+    box-shadow: 0 0 7px 1px rgba(69, 165, 248, 0.63);
+    opacity: 0.9;
+}
+
+.profile_username {
+    margin-top: -10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile_info {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.profile_info li {
+    display: block;
+    float: left;
+    width: 86px;
+    text-align: center;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-color: #eaeaea;
+}
+
+.profile_info li strong {
+    font-size: 20px;
+    display: block;
+    font-weight: bold;
+    line-height: 18px;
+    width: 86px;
+    overflow: hidden;
+}
+
+.profile_info li span {
+    display: block;
+    line-height: 18px;
+    width: 86px;
+    overflow: hidden;
+    color: #bababa;
+    margin-top: 2px;
+}
+
+.profile_info li:last-child {
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+.following_container, .follower_container {
+    color: #bababa;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+}
+
+.following_avatar ul, .follower_avatar ul {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.following_avatar li, .follower_avatar li {
+    display: block;
+    overflow: hidden;
+    width: 82px;
+    height: 86px;
+    text-align: center;
+    float:left;
+
+}
+
+.following_avatar img, .follower_avatar img {
+    border-radius: 50%;
+    width: 60px;
+}
+
+.f-btn{
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+.pinbi{
+	font-size:12px;
+	font-weight:normal;
+	color:#a94442;
+}

@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * Collect entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "collect")
+@Table(name = "collect", catalog = "liblog")
 public class Collect implements java.io.Serializable {
 
 	// Fields

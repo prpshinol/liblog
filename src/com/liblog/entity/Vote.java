@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * Vote entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "vote")
+@Table(name = "vote", catalog = "liblog")
 public class Vote implements java.io.Serializable {
 
 	// Fields

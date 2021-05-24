@@ -1,0 +1,176 @@
+.form-signup {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signup .form-signup-logo {
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    background: url(../image/icon.png) no-repeat;
+    background-size: cover;
+}
+
+.form-signup .form-signup-heading {
+    font-variant: small-caps;
+    font-weight: bolder;
+    color: #357ebd;
+    -webkit-text-stroke: 1px #ffffff;
+    font-size: 40px;
+    float: left;
+}
+
+.form-signup .form-signup-subtitle {
+    color: rgba(18, 18, 18, 0.51);
+    text-align: center;
+    margin-top: 33px;
+    float: right;
+}
+
+.form-signup .checkbox {
+    font-weight: normal;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-signup .div-radio {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.form-signup .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signup .form-control:focus {
+    z-index: 5;
+}
+
+.div-signin {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-signup .a-signin {
+    position: absolute;
+    right: 10px;
+}
+
+.form-signup input[sign="username"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signup input[type="password"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-signup input[sign="captcha"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signup span[type="captchaholder"] {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 2px;
+}
+body {
+    padding-top: 40px;
+    background-color: #f8f8f8;
+}
+
+.upload-avatar {
+    position: relative;
+    margin: 10px;
+    margin-left: 0px;
+    overflow: auto;
+}
+
+.btn-avatar {
+    float: right;
+    margin-top: 13px;
+}
+
+.img-thumbnail {
+    height: 70px;
+    float: right;
+    margin-right: 20px;
+}
+
+#clipArea {
+    margin: 20px;
+    height: 180px;
+}
+
+#photo-view {
+    margin: 20px auto;
+    width: 140px;
+    height: 140px;
+}
+
+.container {
+    position: relative;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #428bca;
+    border-color: #285e8e;
+    border-radius: 4px;
+    padding: 7px 12px;
+    overflow: hidden;
+    color: #ffffff;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    height: 34px;
+    vertical-align: middle;
+}
+
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.file:hover {
+    background: #3071a9;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.upfilebox {
+    position: relative;
+    text-align: center;
+}
+
+#clipBtn {
+    margin-left: 40px;
+}
+
+/*错误提示信息*/
+.error_msg {
+    color: red;
+    padding: 5px 0px;
+}
+

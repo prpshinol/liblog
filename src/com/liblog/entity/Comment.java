@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
  * Comment entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "comment")
+@Table(name = "comment", catalog = "liblog")
 public class Comment implements java.io.Serializable {
 
 	// Fields
@@ -57,7 +58,7 @@ public class Comment implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "comment_id", unique = true, nullable = false)
 	public Integer getCommentId() {
 		return this.commentId;
@@ -88,7 +89,7 @@ public class Comment implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "parent_id", nullable = false)
+	@JoinColumn(name = "parent_id")
 	public Comment getComment() {
 		return this.comment;
 	}

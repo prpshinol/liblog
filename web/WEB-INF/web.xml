@@ -27,15 +27,15 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-    <!--&lt;!&ndash;登录过滤器&ndash;&gt;
+    <!--登录过滤器-->
     <filter>
         <filter-name>LoginFilter</filter-name>
-        <filter-class>com.library.filter.LoginFilter</filter-class>
+        <filter-class>com.liblog.filter.LoginFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
         <url-pattern>*.do</url-pattern>
-    </filter-mapping>-->
+    </filter-mapping>
 
     <!-- 配置字符集过滤器 -->
     <filter>
@@ -61,6 +61,6 @@
 
     <!-- 欢迎页面 -->
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>/home/indexUI.do</welcome-file>
     </welcome-file-list>
 </web-app>

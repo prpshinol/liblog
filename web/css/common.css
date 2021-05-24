@@ -1,0 +1,104 @@
+body {
+    background-color: #f8f8f8;
+    font-family: Microsoft YaHei, Tahoma, Helvetica, Arial, sans-serif;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1100px;
+    }
+}
+
+.row {
+    width: 100%;
+    margin: auto;
+}
+
+.blog-main {
+    display: inline-block;
+    width: 70%;
+}
+
+/* 性别图标颜色 */
+
+.icon-iconfontiocnnan {
+    color: deepskyblue;
+}
+
+.icon-nv {
+    color: hotpink;
+}
+
+a {
+    color: #7a7a7a;
+}
+
+a:hover {
+    color: rgba(0, 17, 13, 0.57);
+    text-shadow: 0 0 5px rgba(0, 47, 63, 0.07);
+}
+
+a:focus {
+    color: #656565;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/*
+ * Footer
+ */
+.blog-footer {
+    padding: 10px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+}
+
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+
+/*书的一条记录*/
+.book-item {
+    margin-left: -15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.book-info div {
+    margin-bottom: 2px;
+}
+
+.book-image img {
+    width: 120px;
+}
+
+/*页面标题*/
+.page_title {
+    padding-left: 20px;
+    font-size: 20px;
+    color: rgba(119, 119, 119, 1);
+    margin-bottom: 5px;
+}
+
+#titie_username{
+    color: rgba(53, 126, 189, 1);
+}
+
+/*后台荐书理由英文和数字自动换行*/
+.admin-book-reason {
+    display: block;
+    word-wrap: break-word;
+}
+
+/*荐书错误提示信息*/
+.book_error_msg{
+    color:red;
+}

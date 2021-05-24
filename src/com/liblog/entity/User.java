@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
  * User entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "user")
+@Table(name = "user", catalog = "liblog")
 public class User implements java.io.Serializable {
 
 	// Fields
@@ -24,15 +25,15 @@ public class User implements java.io.Serializable {
 	private Integer userId;
 	private String username;
 	private String password;
-	private Integer gender;
+	private String gender;
 	private String imgPath;
 	private Timestamp createTime;
 	private Set<Collect> collects = new HashSet<Collect>(0);
 	private Set<Vote> votes = new HashSet<Vote>(0);
 	private Set<Comment> comments = new HashSet<Comment>(0);
-	private Set<Follow> followsForUserId = new HashSet<Follow>(0);
+	private Set<Follow> fanses = new HashSet<Follow>(0);
 	private Set<Book> books = new HashSet<Book>(0);
-	private Set<Follow> followsForFansId = new HashSet<Follow>(0);
+	private Set<Follow> users = new HashSet<Follow>(0);
 
 	// Constructors
 
@@ -47,11 +48,11 @@ public class User implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public User(String username, String password, Integer gender,
-			String imgPath, Timestamp createTime, Set<Collect> collects,
-			Set<Vote> votes, Set<Comment> comments,
-			Set<Follow> followsForUserId, Set<Book> books,
-			Set<Follow> followsForFansId) {
+	public User(String username, String password, String gender,
+				String imgPath, Timestamp createTime, Set<Collect> collects,
+				Set<Vote> votes, Set<Comment> comments,
+				Set<Follow> fanses, Set<Book> books,
+				Set<Follow> users) {
 		this.username = username;
 		this.password = password;
 		this.gender = gender;
@@ -60,14 +61,14 @@ public class User implements java.io.Serializable {
 		this.collects = collects;
 		this.votes = votes;
 		this.comments = comments;
-		this.followsForUserId = followsForUserId;
+		this.fanses = fanses;
 		this.books = books;
-		this.followsForFansId = followsForFansId;
+		this.users = users;
 	}
 
 	// Property accessors
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "user_id", unique = true, nullable = false)
 	public Integer getUserId() {
 		return this.userId;
@@ -77,7 +78,7 @@ public class User implements java.io.Serializable {
 		this.userId = userId;
 	}
 
-	@Column(name = "username", nullable = false, length = 20)
+	@Column(name = "username", nullable = false, length = 45)
 	public String getUsername() {
 		return this.username;
 	}
@@ -86,7 +87,7 @@ public class User implements java.io.Serializable {
 		this.username = username;
 	}
 
-	@Column(name = "password", nullable = false, length = 20)
+	@Column(name = "password", nullable = false, length = 45)
 	public String getPassword() {
 		return this.password;
 	}
@@ -95,12 +96,12 @@ public class User implements java.io.Serializable {
 		this.password = password;
 	}
 
-	@Column(name = "gender")
-	public Integer getGender() {
+	@Column(name = "gender", length = 2)
+	public String getGender() {
 		return this.gender;
 	}
 
-	public void setGender(Integer gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -149,13 +150,13 @@ public class User implements java.io.Serializable {
 		this.comments = comments;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userByUserId")
-	public Set<Follow> getFollowsForUserId() {
-		return this.followsForUserId;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+	public Set<Follow> getFanses() {
+		return this.fanses;
 	}
 
-	public void setFollowsForUserId(Set<Follow> followsForUserId) {
-		this.followsForUserId = followsForUserId;
+	public void setFanses(Set<Follow> followsForUserId) {
+		this.fanses = followsForUserId;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
@@ -167,13 +168,13 @@ public class User implements java.io.Serializable {
 		this.books = books;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userByFansId")
-	public Set<Follow> getFollowsForFansId() {
-		return this.followsForFansId;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "fans")
+	public Set<Follow> getUsers() {
+		return this.users;
 	}
 
-	public void setFollowsForFansId(Set<Follow> followsForFansId) {
-		this.followsForFansId = followsForFansId;
+	public void setUsers(Set<Follow> followsForFansId) {
+		this.users = followsForFansId;
 	}
 
 }

@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
  * Book entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "book")
+@Table(name = "book", catalog = "liblog")
 public class Book implements java.io.Serializable {
 
 	// Fields
@@ -39,6 +40,13 @@ public class Book implements java.io.Serializable {
 	private Set<Comment> comments = new HashSet<Comment>(0);
 	private Set<Collect> collects = new HashSet<Collect>(0);
 	private Set<Vote> votes = new HashSet<Vote>(0);
+
+	//常量
+	public static final Integer BOOK_LANGUAGE_CHINESE = 0;//中文
+	public static final Integer BOOK_LANGUAGE_FOREIGN = 1;//外文
+	public static final Integer BOOK_STATUS_RECOMMENDED = 1;//已被荐购，未同意。
+	public static final Integer BOOK_STATUS_AGREED = 2;//同意荐购。
+	public static final Integer BOOK_STATUS_FINISHED = 3;//书已入馆。
 
 	// Constructors
 
@@ -77,7 +85,7 @@ public class Book implements java.io.Serializable {
 
 	// Property accessors
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "book_id", unique = true, nullable = false)
 	public Integer getBookId() {
 		return this.bookId;

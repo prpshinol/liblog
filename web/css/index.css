@@ -1,0 +1,111 @@
+.send_container {
+    box-shadow: 0px 0px 10px #e1e1e1;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.send_tip {
+    font-weight: normal;
+    color: #a6a6a6;
+}
+
+#share_content {
+    resize: none;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    overflow: auto;
+}
+
+.send_container .light_gray {
+    color: #a1a1a1;
+}
+
+#facebox {
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #d6d6d6;
+    margin-top: 5px;
+}
+
+#facebox tr > td > img {
+    margin: 1px;
+}
+
+#facebox tr > td > img:hover {
+    border-style: solid;
+    border-color: #a0a0a0;
+    border-width: 1px;
+    margin: 0px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#ssi-previewBox .ssi-imgToUploadTable {
+    border-radius: 4px;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #c9c9c9;
+}
+
+#btn_face {
+    margin-left: 5px;
+}
+
+.sendarea_a {
+    margin-right: 10px;
+}
+
+.btn-send {
+    background-color: #3993d6;
+    color: white;
+}
+
+.btn-send:hover {
+    background-color: #357ebd;
+    color: white;
+}
+
+.send_footer {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+/*.form-group {
+    margin-bottom: 0px;
+}*/
+
+.btn_face_image {
+    display: block;
+    float: left;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.share_limits {
+    display: block;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+    color: #a1a1a1;
+}
+
+#ssi-previewBox {
+    padding: 10px;
+}
+
+/* 图片预览 图片小字样式 */
+.ssi-imgToUploadTable tbody > tr > td {
+    font-size: smaller;
+    color: #a5a5a5;
+}
+
+/* 覆盖 Bootstrap 默认按钮样式 */
+.btn:hover, .btn:focus, .btn.focus {
+    color: white;
+}

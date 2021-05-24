@@ -1,0 +1,96 @@
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    /*拉大顶部距离*/
+    margin-top: 45px;
+}
+
+.form-signin .form-signin-logo {
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    background: url(../image/icon.png) no-repeat;
+    background-size: cover;
+}
+
+.form-signin .form-signin-heading {
+    font-variant: small-caps;
+    font-weight: bolder;
+    color: #357ebd;
+    -webkit-text-stroke: 1px #ffffff;
+    font-size: 40px;
+    float: left;
+}
+
+.form-signin .form-signin-subtitle {
+    color: rgba(18, 18, 18, 0.51);
+    text-align: center;
+    margin-top: 33px;
+    float: right;
+}
+
+/*后台登录标题*/
+.form-signin-subtitle-admin {
+    color: rgba(18, 18, 18, 0.51);
+    text-align: center;
+    margin-top: 70px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 5;
+}
+
+.form-signin .checkbox-signup{
+    position: absolute;
+    right: 10px;
+}
+
+.form-signin input[sign="username"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-signin input[sign="captcha"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin span[type="captchaholder"] {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 2px;
+}
+
+/*错误提示信息*/
+.error_msg{
+	color:red;
+	padding:5px 0px;
+}
