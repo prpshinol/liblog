@@ -22,10 +22,11 @@ public class HomeController {
     }
     /**
      * 投票榜
+     * @return
      */
-    @RequestMapping("/hottestUI")
-    public String hottestUI() {
-        return "home/hottest";
+    @RequestMapping("/rankingUI")
+    public String rankingUI(){
+        return "home/ranking";
     }
     /**
      * 荐书历史

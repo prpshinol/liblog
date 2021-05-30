@@ -51,7 +51,7 @@
             options = {};
         }
         $.ajax({
-            url:"${path}/book/getBookList.do",
+            url:"${path}/admin/getBookList.do",
             type:"post",
             data:{
                 "pageNo":options.pageNo,
@@ -166,7 +166,7 @@
                 //注册按钮事件
                 $.each(json.data.books, function (index, book) {
                     $("#btn-choose-" + book.id).click(function () {
-                        var url = "${path}/book/addBookStatus.do";
+                        var url = "${path}/admin/addBookStatus.do";
                         $.ajax({
                             url:url,
                             type:"post",
@@ -187,7 +187,7 @@
                         });
                     });
                     $("#btn-cancel-" + book.id).click(function () {
-                        var url = "${path}/book/reduceBookStatus.do";
+                        var url = "${path}/admin/reduceBookStatus.do";
                         $.ajax({
                             url:url,
                             type:"post",

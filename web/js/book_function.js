@@ -22,7 +22,7 @@ function replace_em(str) {
 
 /**
  * 获得荐书记录列表
- * @param options {pageNo,pageSize,listType,searchStr,userId,status}
+ * @param options {pageNo,pageSize,listType,searchStr,userId,status,lastNDays}
  */
 function getBookList(options) {
     if(options==undefined) {
@@ -37,7 +37,8 @@ function getBookList(options) {
             "listType":options.listType,
             "searchStr":options.searchStr,
             "userId":options.userId,
-            "status":options.status
+            "status":options.status,
+            "lastNDays": options.lastNDays
         },
         dataType:"json",
         success:function (json) {
@@ -47,7 +48,31 @@ function getBookList(options) {
             var html = '';
             if (json.data.books.length > 0) {
                 $.each(json.data.books, function (index, book) {
-                    var statusLabel;//按钮显示
+                    //点赞榜，排名1~3的分别加上金银铜图标
+                    var rankHtml = '';
+                    if (options.listType == 1) {
+                        if (index < 3 && (options.pageNo==null||options.pageNo==1)) {
+                            if (index == 0) {
+                                rankHtml =
+                                    '    <div class="rank_gold">' +
+                                    '        <i class="iconfont icon-rank-2"></i>' +
+                                    '    </div>';
+                            } else if (index == 1) {
+                                rankHtml =
+                                    '    <div class="rank_silver">' +
+                                    '        <i class="iconfont icon-rank-2"></i>' +
+                                    '    </div>';
+                            } else if (index == 2) {
+                                rankHtml =
+                                    '    <div class="rank_coppery">' +
+                                    '        <i class="iconfont icon-rank-2"></i>' +
+                                    '    </div>';
+                            }
+                        }
+                    }
+
+                    //状态显示
+                    var statusLabel;
                     if(book.status==1) {
                         statusLabel = '<label class="label-default">投票中</label>';
                     } else if(book.status==2) {
@@ -55,10 +80,14 @@ function getBookList(options) {
                     } else {
                         statusLabel = '<label class="label-success">已馆藏</label>';
                     }
+
                     html +=
                         '<div class="share_container">' +
+                        rankHtml +
                         '    <!-- 分享的上部分, 头像, 内容等 -->' +
-                        '    <div class="share_main_container">' +
+                        '    <div class="share_main_container">';
+
+                    html +=
                         '        <div class="share_layout">' +
                         '            <div class="share_avatar"> <!-- 头像 -->' +
                         '                <a href="'+path+'/home/userHomeUI.do?userId=' + book.userId + '"><img src="'+path+'/' + book.userImg + '" class="share_avatar"> </a>' +
@@ -145,7 +174,7 @@ function getBookList(options) {
                 html += '<hr/>' +
                     '<div id="pageNavigator"></div>';
             } else {    //无数据
-                html += '暂无数据';
+                html += '<div class="share_container"><div class="no_data">暂无相关记录</div></div>';
             }
 
             $("#book-list").html(html);
@@ -163,7 +192,8 @@ function getBookList(options) {
                         listType:options.listType,
                         searchStr:options.searchStr,
                         userId:options.userId,
-                        status:options.status
+                        status:options.status,
+                        lastNDays: options.lastNDays
                     });
                 }
             });
@@ -192,7 +222,8 @@ function getBookList(options) {
                                     listType:options.listType,
                                     searchStr:options.searchStr,
                                     userId:options.userId,
-                                    status:options.status
+                                    status:options.status,
+                                    lastNDays: options.lastNDays
                                 });
                             }
                         }
@@ -220,7 +251,8 @@ function getBookList(options) {
                                     listType:options.listType,
                                     searchStr:options.searchStr,
                                     userId:options.userId,
-                                    status:options.status
+                                    status:options.status,
+                                    lastNDays: options.lastNDays
                                 });
                             }
                         }

@@ -13,6 +13,7 @@ public class Options {
     private Integer userId;//谁荐购的书
     private Integer status;//书的状态
     private Integer language;//书的语言
+    private Integer lastNDays;//时间筛选（过去N天:N=1今天，N=7最近一周，null全部）
     //常量
     public static final Integer OPTIONS_LISTTYPE_DEFAULT = 0;//最新荐书列表（默认）
 
@@ -84,5 +85,13 @@ public class Options {
 
     public void setLanguage(Integer language) {
         this.language = language;
+    }
+
+    public Integer getLastNDays() {
+        return lastNDays;
+    }
+
+    public void setLastNDays(Integer lastNDays) {
+        this.lastNDays = lastNDays;
     }
 }

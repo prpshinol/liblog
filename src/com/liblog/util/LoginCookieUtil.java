@@ -3,6 +3,8 @@ package com.liblog.util;
 import com.liblog.entity.User;
 import com.liblog.service.IUserService;
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -111,7 +113,9 @@ public class LoginCookieUtil {
 			String username = cookieValues[0];
 
 			// 根据用户名到数据库中检查用户是否存在
-			IUserService userService = ServiceUtil.getUserService();
+			//获得当前的IOC容器
+			WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(request.getSession().getServletContext());
+			IUserService userService = context.getBean(IUserService.class);
 			User user = userService.findByUsername(username);
 
 			// 如果user返回不为空,就取出密码,使用用户名+密码+有效时间+ webSiteKey进行MD5加密
@@ -123,7 +127,7 @@ public class LoginCookieUtil {
 				// 将结果与Cookie中的MD5码相比较,如果相同,写入Session,自动登陆成功,并继续用户请求
 				if (md5ValueFromUser.equals(md5ValueInCookie)) {
 					HttpSession session = request.getSession(true);
-					session.setAttribute("loginInfo", user);
+					session.setAttribute("loginUser", user);
 					return true;
 				} else {
 					return false;

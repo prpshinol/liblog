@@ -102,3 +102,12 @@ a:link {
 .book_error_msg{
     color:red;
 }
+
+/* 无数据时的样式 */
+.no_data {
+    color: #9c9c9c;
+    text-align: center;
+    border-bottom: 2px solid #f2f2f5;
+    padding: 20px 0 10px 0;
+    margin: 0 20px 20px 20px;
+}

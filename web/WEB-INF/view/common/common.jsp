@@ -30,6 +30,10 @@
 <link href="${path}/css/sidebar.css" rel="stylesheet">
 <!-- 关注/粉丝列表样式 -->
 <link href="${path}/css/follow.css" rel="stylesheet">
+<!-- 点赞榜样式 -->
+<link href="${path}/css/ranking.css" rel="stylesheet">
+<!-- 搜索页样式 -->
+<link href="${path}/css/searchPage.css" rel="stylesheet">
 
 <!-- jQuery -->
 <script src="${path}/assets/jquery/jquery-3.1.1.min.js"></script>

@@ -1,5 +1,7 @@
 package com.liblog.filter;
 
+import com.liblog.util.LoginCookieUtil;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,13 +31,10 @@ public class LoginFilter implements Filter {
                 } else {//管理员未登录
                     response.sendRedirect(request.getContextPath() + "/login/adminLoginUI.do");
                 }
-            } else if(request.getRequestURI().contains("/book")){//前后台共用
-                if (request.getSession().getAttribute("loginUser") != null || request.getSession().getAttribute("loginAdmin") != null) {//已登录
-                    filterChain.doFilter(request, response);
-                } else {//未登录
-                    response.sendRedirect(request.getContextPath() + "/login/loginUI.do");
-                }
-            } else {//前台 + 如http://localhost:8080/library/
+            } else {//前台
+                //执行自动登陆的操作
+                LoginCookieUtil.readCookieAndLogin(request, response);
+
                 if (request.getSession().getAttribute("loginUser") != null) {//已登录
                     filterChain.doFilter(request, response);
                 } else {//未登录

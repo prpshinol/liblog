@@ -76,31 +76,4 @@ public class BookController {
         return json;
     }
 
-    /**
-     * 书的status+1
-     * @param book
-     * @return
-     */
-    @RequestMapping("/addBookStatus")
-    @ResponseBody
-    public Json addBookStatus(Book book) {
-        Json json = new Json();
-        bookService.addBookStatus(book);
-        json.setStatus(true);
-        return json;
-    }
-
-    /**
-     * 书的status-1
-     * @param book
-     * @return
-     */
-    @RequestMapping("/reduceBookStatus")
-    @ResponseBody
-    public Json reduceBookStatus(Book book) {
-        Json json = new Json();
-        bookService.reduceBookStatus(book);
-        json.setStatus(true);
-        return json;
-    }
 }

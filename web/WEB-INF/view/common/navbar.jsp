@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="${path}/home/indexUI.do"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-                <li><a href="${path}/home/hottestUI.do"><span class="glyphicon glyphicon-thumbs-up"></span> 投票榜</a></li>
+                <li><a href="${path}/home/rankingUI.do"><span class="glyphicon glyphicon-thumbs-up"></span> 投票榜</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-book"></span> 荐书列表
@@ -41,7 +41,7 @@
             </ul>
             <form class="navbar-form navbar-left" role="search" action="${path}/home/searchUI.do">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="书名、作者、ISBN" name="searchStr" value="${param.searchStr}" required>
+                    <input type="text" class="form-control" placeholder="书名、作者、isbn、用户" name="searchStr" value="${param.searchStr}" required>
                 </div>
                 <button type="submit" class="btn btn-default" id="btn-search">搜索</button>
             </form>

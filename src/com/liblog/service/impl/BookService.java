@@ -16,6 +16,7 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -87,15 +88,31 @@ public class BookService extends BaseService<Book> implements IBookService {
         else if (options.getListType().equals(Options.OPTIONS_LISTTYPE_RANKING)) {
             hql.append("from Book b where b.status=1 ");
 
+            //投票数大于0
             hql.append("and b.votes.size > 0  ");
 
+            //时间筛选（全部，今天，最近一周）
+            if (options.getLastNDays() != null) {
+                Calendar calendar = Calendar.getInstance();
+                //前N天
+                calendar.add(Calendar.DATE, 1 - options.getLastNDays());
+                //设置时分秒为0
+                calendar.set(Calendar.AM_PM, Calendar.AM);
+                calendar.set(Calendar.HOUR,0);
+                calendar.set(Calendar.MINUTE, 0);
+                calendar.set(Calendar.SECOND, 0);
+
+                hql.append("and b.createTime > ? ");
+                params.add(calendar.getTime());
+            }
+
             //查询总记录数
-            count = bookDao.count("select count(1) " + hql.toString());
+            count = bookDao.count("select count(1) " + hql.toString(), params.toArray());
 
             hql.append("order by b.votes.size desc,b.createTime desc ");
 
             //查询分页数据
-            List<Book> books = bookDao.find(hql.toString(), options.getPageNo(), options.getPageSize());
+            List<Book> books = bookDao.find(hql.toString(), params.toArray(), options.getPageNo(), options.getPageSize());
 
             /****************封装Json********************/
             //封装data
