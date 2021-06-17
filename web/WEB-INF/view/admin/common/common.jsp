@@ -18,7 +18,6 @@
 
 <!-- Common styles -->
 <link href="${path}/css/common.css" rel="stylesheet">
-<link href="${path}/css/signin.css" rel="stylesheet">
 
 <!-- jQuery -->
 <script src="${path}/assets/jquery/jquery-3.1.1.min.js"></script>

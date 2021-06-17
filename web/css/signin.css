@@ -1,9 +1,11 @@
+body {
+    padding-top: 40px;
+    background-color: #f8f8f8;
+}
 .form-signin {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
-    /*拉大顶部距离*/
-    margin-top: 45px;
 }
 
 .form-signin .form-signin-logo {

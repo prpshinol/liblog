@@ -11,6 +11,7 @@
     <title>后台登录</title>
 
     <%@include file="/WEB-INF/view/admin/common/common.jsp"%>
+    <link href="${path}/css/signin.css" rel="stylesheet">
 
 </head>
 <body>
